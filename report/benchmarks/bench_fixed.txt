@@ -1,0 +1,135 @@
+==============================================================================
+BENCHMARK RETRIEVAL — Lab 07 · Nhóm G26 · chủ đề học bổng & học phí HUST
+==============================================================================
+Chiến lược chunking : fixed
+Embedding backend   : text-embedding-3-small (provider=openai)
+Tài liệu nạp        : 5 file .md
+Chunk đã nạp        : 37 chunks
+Độ dài chunk        : min=126  max=500  avg=481.0
+
+------------------------------------------------------------------------------
+[Q1] (tra số liệu) Sinh viên thuộc hộ nghèo được cấp học bổng hỗ trợ học tập trị giá bao nhiêu phần trăm học phí?
+      Gold answer : Toàn phần, trị giá 100% học phí (so với chương trình đào tạo chuẩn). Hộ cận nghèo và hộ đặc biệt khó khăn được bán phần 50% học phí.
+      Gold doc_id : tieu-chi-xet-hoc-bong-ho-tro-hoc-tap
+      Phải chứa   : ['100% học phí']
+
+   Top-3 (metadata_filter=None):
+      1. score=+0.7504  tieu-chi-xet-hoc-bong-ho-tro-hoc-tap  [student]  #2
+         bổng hỗ trợ học tập: - Sinh viên K64 thuộc **hộ nghèo** (theo quy định của Nhà nước) được cấp học bổng **toàn ...
+      2. score=+0.6444  ho-tro-tai-chinh-tan-sinh-vien  [student]  #3
+         ghèo. - Sinh viên thuộc hộ gia đình gặp khó khăn về tài chính do tai nạn, bệnh tật, thiên tai, hỏa hoạn, dịch ...
+      3. score=+0.6148  tieu-chi-xet-hoc-bong-ho-tro-hoc-tap  [student]  #3
+         giảm) bởi Hội đồng xét duyệt. Ví dụ: sinh viên thuộc hộ nghèo nhưng nếu bố mẹ khỏe mạnh chỉ nuôi một (hoặc tối...
+
+   Hạng của tài liệu gold : 1
+   Ngữ cảnh chứa đáp án   : CÓ
+   Điểm theo doc_id       : 2/2   <- cách chấm ngây thơ
+   Điểm theo nội dung     : 2/2   <- cách chấm thật (SCORING.md)
+
+   Câu trả lời của agent:
+      [DEMO LLM — chạy với --llm để gọi model thật]
+
+------------------------------------------------------------------------------
+[Q2] (hỏi điều kiện) Điều kiện GPA và điểm rèn luyện để được học bổng khuyến khích học tập loại A là bao nhiêu?
+      Gold answer : Loại A: GPA từ 3.6 và điểm rèn luyện từ 90. Mức học bổng loại A tương đương 150% học phí.
+      Gold doc_id : ho-tro-tai-chinh-tan-sinh-vien
+      Phải chứa   : ['3.6', '90']
+
+   Top-3 (metadata_filter=None):
+      1. score=+0.6759  ho-tro-tai-chinh-tan-sinh-vien  [student]  #4
+         n được xét học bổng: - Loại A: GPA từ 3.6, điểm rèn luyện từ 90. - Loại B: GPA từ 3.2, điểm rèn luyện từ 80. -...
+      2. score=+0.6054  ho-tro-tai-chinh-tan-sinh-vien  [student]  #3
+         ghèo. - Sinh viên thuộc hộ gia đình gặp khó khăn về tài chính do tai nạn, bệnh tật, thiên tai, hỏa hoạn, dịch ...
+      3. score=+0.5601  ho-tro-tai-chinh-tan-sinh-vien  [student]  #5
+         3, có CPA ≥ 3.2; điểm rèn luyện tích lũy ≥ 80 đi trao đổi từ 1–12 tháng tại các trường đại học nước ngoài. - M...
+
+   Hạng của tài liệu gold : 1
+   Ngữ cảnh chứa đáp án   : CÓ
+   Điểm theo doc_id       : 2/2   <- cách chấm ngây thơ
+   Điểm theo nội dung     : 2/2   <- cách chấm thật (SCORING.md)
+
+   Câu trả lời của agent:
+      [DEMO LLM — chạy với --llm để gọi model thật]
+
+------------------------------------------------------------------------------
+[Q3] (hỏi quy trình — CẦN METADATA FILTER) Hồ sơ đăng ký học bổng hỗ trợ học tập nộp ở đâu?
+      Gold answer : Với sinh viên đang học: gửi về Phòng Tuyển sinh, Phòng 202, Nhà D7, Trường Đại học Bách khoa Hà Nội, số 1 Đại Cồ Việt, Hai Bà Trưng, Hà Nội.
+      Gold doc_id : tieu-chi-xet-hoc-bong-ho-tro-hoc-tap
+      Phải chứa   : ['Phòng 202', 'D7']
+
+   Top-3 (metadata_filter={'audience': 'student'}):
+      1. score=+0.6129  tieu-chi-xet-hoc-bong-ho-tro-hoc-tap  [student]  #5
+         c sinh đạt giải Nhất, Nhì trong Kỳ thi Học sinh Giỏi Quốc gia các môn Toán, Lý, Hóa, Sinh, CNTT, hoặc tham dự ...
+      2. score=+0.5996  tieu-chi-xet-hoc-bong-ho-tro-hoc-tap  [student]  #4
+         ợp trên thì sẽ không được cấp học bổng hỗ trợ học tập. ## Kết quả triển khai và học bổng tài năng Trong đợt 1 ...
+      3. score=+0.5891  tieu-chi-xet-hoc-bong-ho-tro-hoc-tap  [student]  #2
+         bổng hỗ trợ học tập: - Sinh viên K64 thuộc **hộ nghèo** (theo quy định của Nhà nước) được cấp học bổng **toàn ...
+
+   Hạng của tài liệu gold : 1
+   Ngữ cảnh chứa đáp án   : KHÔNG
+   Điểm theo doc_id       : 2/2   <- cách chấm ngây thơ
+   Điểm theo nội dung     : 0/2   <- cách chấm thật (SCORING.md)
+
+   === A/B: CÙNG CÂU HỎI, BỎ METADATA FILTER ===
+      1. score=+0.6129  tieu-chi-xet-hoc-bong-ho-tro-hoc-tap  [student]  #5
+         c sinh đạt giải Nhất, Nhì trong Kỳ thi Học sinh Giỏi Quốc gia các môn Toán, Lý, Hóa, Sinh, CNTT, hoặc tham dự ...
+      2. score=+0.5996  tieu-chi-xet-hoc-bong-ho-tro-hoc-tap  [student]  #4
+         ợp trên thì sẽ không được cấp học bổng hỗ trợ học tập. ## Kết quả triển khai và học bổng tài năng Trong đợt 1 ...
+      3. score=+0.5963  mo-dang-ky-hoc-bong-ho-tro-hoc-tap-cho-hoc-sinh-nam-cuoi-thpt  [applicant]  #0
+         # Mở đăng ký học bổng hỗ trợ học tập cho học sinh năm cuối THPT *Ngày đăng: 22-09-2020* Thực hiện thí điểm đổi...
+
+   Không lọc -> hạng gold=1, ngữ cảnh chứa đáp án=KHÔNG, điểm thật=0/2
+   Filter có đổi kết quả không: CÓ
+
+   Câu trả lời của agent:
+      [DEMO LLM — chạy với --llm để gọi model thật]
+
+------------------------------------------------------------------------------
+[Q4] (tra học phí) Học phí chương trình ELITECH năm học 2022-2023 là bao nhiêu một năm?
+      Gold answer : 35 đến 40 triệu đồng/năm học; riêng Khoa học dữ liệu và Trí tuệ nhân tạo (IT-E10) và Logistics và Quản lý chuỗi cung ứng (EM-E14) khoảng 60 triệu đồng/năm học.
+      Gold doc_id : hoc-phi-dai-hoc-2022
+      Phải chứa   : ['35', '40 triệu']
+
+   Top-3 (metadata_filter=None):
+      1. score=+0.7328  hoc-phi-dai-hoc-2022  [student]  #0
+         # Học phí Đại học 2022 *Ngày đăng: 29-06-2022* Đối với khoá nhập học năm 2022 (K67), học phí của năm học 2022-...
+      2. score=+0.5849  hoc-phi-dai-hoc-2022  [student]  #1
+         ằng Tiếng Anh chuyên nghiệp quốc tế (FL2): 42 - 45 triệu đồng/năm học (đã bao gồm phí ghi danh). - Các chương ...
+      3. score=+0.5430  nghi-dinh-55-nhan-hoc-bong  [student]  #9
+         ành Kỹ thuật hóa học, Thạc sĩ tích hợp Cử nhân Tài năng. ### Chương trình vi mạch bán dẫn nhận mức 4.200.000 đ...
+
+   Hạng của tài liệu gold : 1
+   Ngữ cảnh chứa đáp án   : CÓ
+   Điểm theo doc_id       : 2/2   <- cách chấm ngây thơ
+   Điểm theo nội dung     : 2/2   <- cách chấm thật (SCORING.md)
+
+   Câu trả lời của agent:
+      [DEMO LLM — chạy với --llm để gọi model thật]
+
+------------------------------------------------------------------------------
+[Q5] (liệt kê) Những chương trình vi mạch bán dẫn nào được nhận học bổng mức 4.200.000 đồng/tháng?
+      Gold answer : Hai chương trình đại học và một chương trình kỹ sư chuyên sâu: Kỹ thuật Điện tử - Viễn thông (ET1), Hệ thống nhúng thông minh và IoT (tăng cường tiếng Nhật) (ET-E9), và Kỹ sư chuyên sâu Thiết kế vi mạch.
+      Gold doc_id : nghi-dinh-55-nhan-hoc-bong
+      Phải chứa   : ['ET1', 'ET-E9']
+
+   Top-3 (metadata_filter=None):
+      1. score=+0.7029  nghi-dinh-55-nhan-hoc-bong  [student]  #9
+         ành Kỹ thuật hóa học, Thạc sĩ tích hợp Cử nhân Tài năng. ### Chương trình vi mạch bán dẫn nhận mức 4.200.000 đ...
+      2. score=+0.6251  nghi-dinh-55-nhan-hoc-bong  [student]  #7
+         g nhận mức 5.500.000 đồng/tháng Từ năm 2026, 7 chương trình tài năng Bách khoa Hà Nội nhận học bổng mức 5.500....
+      3. score=+0.6205  ho-tro-tai-chinh-tan-sinh-vien  [student]  #3
+         ghèo. - Sinh viên thuộc hộ gia đình gặp khó khăn về tài chính do tai nạn, bệnh tật, thiên tai, hỏa hoạn, dịch ...
+
+   Hạng của tài liệu gold : 1
+   Ngữ cảnh chứa đáp án   : CÓ
+   Điểm theo doc_id       : 2/2   <- cách chấm ngây thơ
+   Điểm theo nội dung     : 2/2   <- cách chấm thật (SCORING.md)
+
+   Câu trả lời của agent:
+      [DEMO LLM — chạy với --llm để gọi model thật]
+
+==============================================================================
+TỔNG ĐIỂM — chấm theo doc_id   : 10/10
+TỔNG ĐIỂM — chấm theo nội dung : 8/10
+Chênh lệch giữa hai cách chấm  : 2 điểm
+==============================================================================

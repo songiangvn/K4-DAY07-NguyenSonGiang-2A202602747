@@ -1,0 +1,135 @@
+==============================================================================
+BENCHMARK RETRIEVAL — Lab 07 · Nhóm G26 · chủ đề học bổng & học phí HUST
+==============================================================================
+Chiến lược chunking : heading
+Embedding backend   : text-embedding-3-small (provider=openai)
+Tài liệu nạp        : 5 file .md
+Chunk đã nạp        : 51 chunks
+Độ dài chunk        : min=60  max=555  avg=346.3
+
+------------------------------------------------------------------------------
+[Q1] (tra số liệu) Sinh viên thuộc hộ nghèo được cấp học bổng hỗ trợ học tập trị giá bao nhiêu phần trăm học phí?
+      Gold answer : Toàn phần, trị giá 100% học phí (so với chương trình đào tạo chuẩn). Hộ cận nghèo và hộ đặc biệt khó khăn được bán phần 50% học phí.
+      Gold doc_id : tieu-chi-xet-hoc-bong-ho-tro-hoc-tap
+      Phải chứa   : ['100% học phí']
+
+   Top-3 (metadata_filter=None):
+      1. score=+0.6853  tieu-chi-xet-hoc-bong-ho-tro-hoc-tap  [student]  #2
+         ## Mức học bổng theo hoàn cảnh Căn cứ vào các tiêu chí xét học bổng hỗ trợ học tập: - Sinh viên K64 thuộc **hộ...
+      2. score=+0.6362  ho-tro-tai-chinh-tan-sinh-vien  [student]  #6
+         ## 5. Học bổng Trần Đại Nghĩa - Đối tượng: Sinh viên có hoàn cảnh khó khăn, có nghị lực vươn lên trong cuộc số...
+      3. score=+0.6322  tieu-chi-xet-hoc-bong-ho-tro-hoc-tap  [student]  #3
+         ## Mức học bổng theo hoàn cảnh Tùy từng hoàn cảnh cụ thể, trị giá của suất học bổng có thể được điều chỉnh (tă...
+
+   Hạng của tài liệu gold : 1
+   Ngữ cảnh chứa đáp án   : CÓ
+   Điểm theo doc_id       : 2/2   <- cách chấm ngây thơ
+   Điểm theo nội dung     : 2/2   <- cách chấm thật (SCORING.md)
+
+   Câu trả lời của agent:
+      [DEMO LLM — chạy với --llm để gọi model thật]
+
+------------------------------------------------------------------------------
+[Q2] (hỏi điều kiện) Điều kiện GPA và điểm rèn luyện để được học bổng khuyến khích học tập loại A là bao nhiêu?
+      Gold answer : Loại A: GPA từ 3.6 và điểm rèn luyện từ 90. Mức học bổng loại A tương đương 150% học phí.
+      Gold doc_id : ho-tro-tai-chinh-tan-sinh-vien
+      Phải chứa   : ['3.6', '90']
+
+   Top-3 (metadata_filter=None):
+      1. score=+0.6515  ho-tro-tai-chinh-tan-sinh-vien  [student]  #5
+         ## 4. Học bổng khuyến khích học tập Theo Nghị định của Chính phủ. Đối tượng: SV có kết quả học tập và rèn luyệ...
+      2. score=+0.5648  nghi-dinh-55-nhan-hoc-bong  [student]  #7
+         ## Tiêu chuẩn và điều kiện để được xét cấp học bổng Để bảo đảm việc nhận học bổng được công bằng và có tác dụn...
+      3. score=+0.5639  nghi-dinh-55-nhan-hoc-bong  [student]  #6
+         ## Tiêu chuẩn và điều kiện để được xét cấp học bổng Với những thí sinh xét tuyển bằng điểm thi, Nghị định yêu ...
+
+   Hạng của tài liệu gold : 1
+   Ngữ cảnh chứa đáp án   : CÓ
+   Điểm theo doc_id       : 2/2   <- cách chấm ngây thơ
+   Điểm theo nội dung     : 2/2   <- cách chấm thật (SCORING.md)
+
+   Câu trả lời của agent:
+      [DEMO LLM — chạy với --llm để gọi model thật]
+
+------------------------------------------------------------------------------
+[Q3] (hỏi quy trình — CẦN METADATA FILTER) Hồ sơ đăng ký học bổng hỗ trợ học tập nộp ở đâu?
+      Gold answer : Với sinh viên đang học: gửi về Phòng Tuyển sinh, Phòng 202, Nhà D7, Trường Đại học Bách khoa Hà Nội, số 1 Đại Cồ Việt, Hai Bà Trưng, Hà Nội.
+      Gold doc_id : tieu-chi-xet-hoc-bong-ho-tro-hoc-tap
+      Phải chứa   : ['Phòng 202', 'D7']
+
+   Top-3 (metadata_filter={'audience': 'student'}):
+      1. score=+0.7162  tieu-chi-xet-hoc-bong-ho-tro-hoc-tap  [student]  #7
+         ## Hồ sơ đăng ký Hồ sơ đăng ký học bổng hỗ trợ học tập gồm:...
+      2. score=+0.6623  tieu-chi-xet-hoc-bong-ho-tro-hoc-tap  [student]  #8
+         ## Hồ sơ đăng ký - Đơn đăng ký xét cấp học bổng hỗ trợ học tập (theo mẫu đơn). - Bản sao có công chứng sổ hộ k...
+      3. score=+0.5874  tieu-chi-xet-hoc-bong-ho-tro-hoc-tap  [student]  #10
+         ## Hồ sơ đăng ký Hồ sơ đăng ký gửi về: Phòng Tuyển sinh, Phòng 202, Nhà D7, trường Đại học Bách khoa Hà Nội. S...
+
+   Hạng của tài liệu gold : 1
+   Ngữ cảnh chứa đáp án   : CÓ
+   Điểm theo doc_id       : 2/2   <- cách chấm ngây thơ
+   Điểm theo nội dung     : 2/2   <- cách chấm thật (SCORING.md)
+
+   === A/B: CÙNG CÂU HỎI, BỎ METADATA FILTER ===
+      1. score=+0.7162  tieu-chi-xet-hoc-bong-ho-tro-hoc-tap  [student]  #7
+         ## Hồ sơ đăng ký Hồ sơ đăng ký học bổng hỗ trợ học tập gồm:...
+      2. score=+0.6687  mo-dang-ky-hoc-bong-ho-tro-hoc-tap-cho-hoc-sinh-nam-cuoi-thpt  [applicant]  #5
+         # Mở đăng ký học bổng hỗ trợ học tập cho học sinh năm cuối THPT 6. **Hồ sơ gồm:** - Đơn đăng ký xét cấp Học bổ...
+      3. score=+0.6623  tieu-chi-xet-hoc-bong-ho-tro-hoc-tap  [student]  #8
+         ## Hồ sơ đăng ký - Đơn đăng ký xét cấp học bổng hỗ trợ học tập (theo mẫu đơn). - Bản sao có công chứng sổ hộ k...
+
+   Không lọc -> hạng gold=1, ngữ cảnh chứa đáp án=KHÔNG, điểm thật=0/2
+   Filter có đổi kết quả không: CÓ
+
+   Câu trả lời của agent:
+      [DEMO LLM — chạy với --llm để gọi model thật]
+
+------------------------------------------------------------------------------
+[Q4] (tra học phí) Học phí chương trình ELITECH năm học 2022-2023 là bao nhiêu một năm?
+      Gold answer : 35 đến 40 triệu đồng/năm học; riêng Khoa học dữ liệu và Trí tuệ nhân tạo (IT-E10) và Logistics và Quản lý chuỗi cung ứng (EM-E14) khoảng 60 triệu đồng/năm học.
+      Gold doc_id : hoc-phi-dai-hoc-2022
+      Phải chứa   : ['35', '40 triệu']
+
+   Top-3 (metadata_filter=None):
+      1. score=+0.7598  hoc-phi-dai-hoc-2022  [student]  #1
+         # Học phí Đại học 2022 - Các chương trình chuẩn: 24 đến 30 triệu đồng/năm học (tùy theo từng ngành). - Các chư...
+      2. score=+0.6404  hoc-phi-dai-hoc-2022  [student]  #2
+         # Học phí Đại học 2022 - Các chương trình đào tạo quốc tế: 25 đến 30 triệu đồng/học kỳ (riêng chương trình TRO...
+      3. score=+0.5930  hoc-phi-dai-hoc-2022  [student]  #3
+         # Học phí Đại học 2022 **Ghi chú:** Lộ trình tăng học phí từ 2020 đến 2025: mức tăng trung bình khoảng 8%/năm ...
+
+   Hạng của tài liệu gold : 1
+   Ngữ cảnh chứa đáp án   : CÓ
+   Điểm theo doc_id       : 2/2   <- cách chấm ngây thơ
+   Điểm theo nội dung     : 2/2   <- cách chấm thật (SCORING.md)
+
+   Câu trả lời của agent:
+      [DEMO LLM — chạy với --llm để gọi model thật]
+
+------------------------------------------------------------------------------
+[Q5] (liệt kê) Những chương trình vi mạch bán dẫn nào được nhận học bổng mức 4.200.000 đồng/tháng?
+      Gold answer : Hai chương trình đại học và một chương trình kỹ sư chuyên sâu: Kỹ thuật Điện tử - Viễn thông (ET1), Hệ thống nhúng thông minh và IoT (tăng cường tiếng Nhật) (ET-E9), và Kỹ sư chuyên sâu Thiết kế vi mạch.
+      Gold doc_id : nghi-dinh-55-nhan-hoc-bong
+      Phải chứa   : ['ET1', 'ET-E9']
+
+   Top-3 (metadata_filter=None):
+      1. score=+0.7158  nghi-dinh-55-nhan-hoc-bong  [student]  #12
+         ### Chương trình vi mạch bán dẫn nhận mức 4.200.000 đồng/tháng Hiện có 2 chương trình đại học và 1 chương trìn...
+      2. score=+0.6739  nghi-dinh-55-nhan-hoc-bong  [student]  #9
+         ### 7 chương trình tài năng nhận mức 5.500.000 đồng/tháng Từ năm 2026, 7 chương trình tài năng Bách khoa Hà Nộ...
+      3. score=+0.5988  ho-tro-tai-chinh-tan-sinh-vien  [student]  #5
+         ## 4. Học bổng khuyến khích học tập Theo Nghị định của Chính phủ. Đối tượng: SV có kết quả học tập và rèn luyệ...
+
+   Hạng của tài liệu gold : 1
+   Ngữ cảnh chứa đáp án   : CÓ
+   Điểm theo doc_id       : 2/2   <- cách chấm ngây thơ
+   Điểm theo nội dung     : 2/2   <- cách chấm thật (SCORING.md)
+
+   Câu trả lời của agent:
+      [DEMO LLM — chạy với --llm để gọi model thật]
+
+==============================================================================
+TỔNG ĐIỂM — chấm theo doc_id   : 10/10
+TỔNG ĐIỂM — chấm theo nội dung : 10/10
+Chênh lệch giữa hai cách chấm  : 0 điểm
+==============================================================================
